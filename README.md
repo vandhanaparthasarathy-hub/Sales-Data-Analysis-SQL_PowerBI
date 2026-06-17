@@ -28,7 +28,7 @@ Data Analyst with 4+ years of experience retrieving and analyzing large, multi-s
 | # | Project | Domain | Tools | Status |
 |---|---|---|---|---|
 | 01 | [🛒 NexaMart Retail Analytics](nexamart/) | Retail / E-commerce | MySQL · Power BI | 🔄 In Progress |
-| 02 | [🛒 AdventureWorks KPI Analysis](nexamart/) | Retail / Sales / Global | Power BI | ✅ Active |
+| 02 | [🛒 AdventureWorks KPI Analysis](adventureworks/) | Retail / Sales / Global | Power BI | ✅ Active |
 
 *More projects coming soon.*
 
