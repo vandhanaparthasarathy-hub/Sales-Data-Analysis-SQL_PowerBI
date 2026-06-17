@@ -1,0 +1,7 @@
+region_id,region_code,region_name,hub_city
+1,NE,Northeast,New York
+2,SE,Southeast,Atlanta
+3,MW,Midwest,Chicago
+4,SC,South/Central,Dallas
+5,WE,West,Los Angeles
+6,SW,Southwest,Phoenix
