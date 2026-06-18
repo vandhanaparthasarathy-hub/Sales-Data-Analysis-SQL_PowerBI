@@ -208,4 +208,4 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 
 ---
 
-[← Back to Portfolio](../00_README/README.md)
+[← Back to Portfolio](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/00_README#readme)
