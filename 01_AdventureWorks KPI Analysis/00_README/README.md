@@ -208,7 +208,7 @@ AdventureWorks-PowerBI/
 
 **Course:** Microsoft Power BI Desktop for Business Intelligence  
 **Platform:** Udemy  
-**Instructor:** Maven Analytics (Chris Dutton)  
+**Instructor:** Maven Analytics (Chris Dutton, Aaron Parry)  
 **Topics Covered:** Power Query, Data Modelling, DAX, Report Design, Dashboard UX
 
 ---
@@ -224,10 +224,10 @@ AdventureWorks-PowerBI/
 
 ## 👤 Author
 
-**[Your Name]**  
+**Vandhana Parthasarathy**  
 Data Analyst | Power BI Developer  
-[LinkedIn](#) · [Portfolio](#) · [GitHub](#)
+🔗 [LinkedIn](https://www.linkedin.com/in/vandhana-parthasarathy-be-mba-895852100/)   📧 [Email](vandhanaparthasarathy@gmail.com)
 
 ---
 
-*This project was completed as part of a structured Udemy course and is included in my data analytics portfolio to demonstrate proficiency in Power BI, DAX, and business intelligence reporting.*
+*This project was completed as part of a structured Udemy course and is included in my data analytics portfolio to demonstrate proficiency in Power BI, DAX, and business intelligence reporting. I've included the Certificate of Completion under 04_Certificate for reference*
