@@ -55,7 +55,7 @@ Drill through view for individual product performance ***(Referneced from Produc
 - Profit vs. Adjusted Profit trend (with dynamic **Price Adjustment %** slider)
 - Return % trend over time
 - Metric selector: switch between Orders, Revenue, Profit, Returns, Return %
-- Featured product: **Fender Set – Mountain** ***NOTE:*** *Choose to change the Products from Top 10 Products Table of Page 1 - Exec Dashboard*
+- Featured product: **Fender Set – Mountain.** ***NOTE:*** *Choose to change the Products from Top 10 Products Table of Page 1 - Exec Dashboard*
 
 ---
 
@@ -186,13 +186,13 @@ AdventureWorks-PowerBI/
 
 ## 📸 Dashboard Preview
 
-| Executive Summary | Product Detail |
+| Executive Summary | Map View |
 |---|---|
-| ![Executive Summary](screenshots/executive_summary.png) | ![Product Detail](screenshots/product_detail.png) |
+| ![Executive Summary](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/01_Exec_Dashboard.png) | ![Map View](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/01_Exec_Dashboard.png) |
 
-| Customer Detail | Map View |
+| Product Detail | Customer Detail |
 |---|---|
-| ![Customer Detail](screenshots/customer_detail.png) | ![Map View](screenshots/map_view.png) |
+| ![Product Detail](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/03_Product_Detail.png) | ![Customer Detail](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/04_Customer_Detail.png) |
 
 ---
 
