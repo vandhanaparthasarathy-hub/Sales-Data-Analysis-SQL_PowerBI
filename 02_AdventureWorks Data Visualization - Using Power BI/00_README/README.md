@@ -119,25 +119,25 @@ Interactive Reports & Dashboards
 ## 📁 Project Structure
 
 ```
-AdventureWorks-PowerBI/
+02_AdventureWorks Data Visualization - Using Power BI/
 │
 ├── 00_README/
 │   └── README.md                                         # Project documentation
 │
-├── 01_PowerBI File/
-│   └── Adventure-Works-PowerBI.pbix                     # Main Power BI report
+├── 01_POWER BI - pbix File/
+│   └── Adventure-Works-PowerBI.pbix                      # Main Power BI report
 │
 ├── 02_data/                                              # Raw source data (CSV)
-│   ├── 01_AdventureWorks Calendar Lookup.csv             # Dimension
-│   ├── 02_AdventureWorks Customer Lookup.csv             # Dimension
-│   ├── 03_AdventureWorks Product Categories Lookup.csv   # Dimension
-│   ├── 04_AdventureWorks Product Subcategories Lookup.csv# Dimension
-│   ├── 05_AdventureWorks Product Lookup.csv              # Dimension
-│   ├── 06_AdventureWorks Territory Lookup.csv            # Dimension
-│   ├── 07_AdventureWorks Sales Data 2020.csv             # Fact
-│   ├── 08_AdventureWorks Sales Data 2021.csv             # Fact
-│   ├── 09_AdventureWorks Sales Data 2022.csv             # Fact
-│   └── 10_AdventureWorks Returns Data.csv                # Fact
+│   ├── 01_Calendar Lookup.csv                            # Dimension
+│   ├── 02_Customer Lookup.csv                            # Dimension
+│   ├── 03_Product Categories Lookup.csv                  # Dimension
+│   ├── 04_Product Subcategories Lookup.csv               # Dimension
+│   ├── 05_Product Lookup.csv                             # Dimension
+│   ├── 06_Territory Lookup.csv                           # Dimension
+│   ├── 07_Sales Data 2020.csv                            # Fact
+│   ├── 08_Sales Data 2021.csv                            # Fact
+│   ├── 09_Sales Data 2022.csv                            # Fact
+│   └── 10_Returns Data.csv                               # Fact
 │
 ├── 03_Screenshots/                                       # Dashboard preview images
 │   ├── 01_Exec_Dashboard.png
@@ -168,11 +168,11 @@ AdventureWorks-PowerBI/
 
 | Executive Summary | Map View |
 |---|---|
-| ![Executive Summary](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/01_Exec_Dashboard.png) | ![Map View](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/01_Exec_Dashboard.png) |
+| ![Executive Summary](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI/03_Screenshots/01_Exec_Dashboard.png) | ![Map View](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI/03_Screenshots/02_Map.png) |
 
 | Product Detail | Customer Detail |
 |---|---|
-| ![Product Detail](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/03_Product_Detail.png) | ![Customer Detail](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/01_AdventureWorks%20KPI%20Analysis/03_Screenshots/04_Customer_Detail.png) |
+| ![Product Detail](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI/03_Screenshots/03_Product_Detail.png) | ![Customer Detail](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI/03_Screenshots/04_Customer_Detail.png) |
 
 ---
 
@@ -214,3 +214,9 @@ Data Analyst | Power BI Developer
 ---
 
 *This project was completed as part of a structured Udemy course and is included in my data analytics portfolio to demonstrate proficiency in Power BI, DAX, and business intelligence reporting.*
+
+---
+
+
+[← Back to Portfolio](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/00_README#readme)
+
