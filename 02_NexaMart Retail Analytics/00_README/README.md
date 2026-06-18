@@ -41,15 +41,17 @@ Please note that this synthetic data was created with the help of **Claude AI**.
 ## 📂 File Structure
 
 ```text
-nexamart/
-├── README.md
-├── data/                              ← 14 CSV files
-└── sql/
-    ├── 01_db_setup.sql                ← database + all table DDL
+    02_NexaMart Retail Analytics/
+├── 00_README/
+│   └── README.md
+├── 01_data/                           ← 14 CSV files
+└── 03_SQL/
+    ├── 01_db_table_setup.sql          ← database + all table DDL
     ├── 02_data_cleaning.sql           ← schema fixes + tax lineage correction
-    ├── 03_views.sql                   ← 4 analytical views
+    ├── 03_functional_queries.sql      ← reusable analytical views
+    ├── 03_views.sql                   ← stored views
     ├── 04_core_analytics.sql          ← joins, aggregations, CTEs, subqueries
-    └── 05_advanced_sql.sql            ← window functions, LAG, running totals
+    └── 05_advanced_SQL.sql            ← window functions, LAG, running totals
 ```
 
 ---
@@ -127,13 +129,11 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 | 1 | Revenue by Region and Channel | Multi-table JOIN and aggregation — total revenue ranked by region |
 | 2 | Top 10 Products by Net Revenue | CTE + LEFT JOIN + COALESCE — gross sales minus refunds per product |
 | 3 | Customer Lifetime Value by Loyalty Tier | Aggregation on view — net spend grouped by Standard, Premium, VIP |
-| 4 | Return Rate by Product Category | CTE + DENSE_RANK() OVER PARTITION — ranks every product within its category by return rate for full leaderboard view |
-| 5 | Top 3 CLV Customers per Loyalty Tier | DENSE_RANK() OVER PARTITION + WHERE rnk <= 3 — filters to top 3 per tier, DENSE_RANK ensures no positions are skipped on ties |
-| 6 | Promo Code Usage Frequency | CTE + date arithmetic + CASE — orders per active day per promo |
-| 7 | High Frequency Low Spend Customers | WHERE vs HAVING — Standard tier customers, 3+ orders under $500 |
-| 8 | Products Never Returned | NOT EXISTS correlated subquery — NULL-safe alternative to NOT IN |
-| 9 | Customer B2C vs B2B Classification | SUBSTRING_INDEX + CASE + CONCAT — derives customer type from email domain |
-| 10 | Average Order Value by Region and Channel | Multi-dimension GROUP BY across channel and region |
+| 4 | Promo Code Usage Frequency | CTE + date arithmetic + CASE — orders per active day per promo |
+| 5 | High Frequency Low Spend Customers | WHERE vs HAVING — Standard tier customers, 3+ orders under $500 |
+| 6 | Products Never Returned | NOT EXISTS correlated subquery — NULL-safe alternative to NOT IN |
+| 7 | Customer B2C vs B2B Classification | SUBSTRING_INDEX + CASE + CONCAT — derives customer type from email domain |
+| 8 | Average Order Value by Region and Channel | Multi-dimension GROUP BY across channel and region |
 
 📂 `sql/04_core_analytics.sql`
 
@@ -143,13 +143,15 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 
 | # | Query | What it does |
 |---|---|---|
-| 1 | 30-Day Moving Average Revenue | SUM() OVER with ROWS BETWEEN frame — smooths daily revenue over rolling 30 days |
-| 2 | Supplier Scorecard Ranked by Region | Weighted score in CTE + RANK() OVER PARTITION — best supplier per region |
-| 3 | Churn Risk by Loyalty Tier | MAX() + HAVING + SUBDATE — flags customers with no order in lookback window |
-| 4 | Channel Revenue Pivot by Quarter | CASE WHEN inside SUM() — three channel columns in one pass, no UNION |
-| 5 | Top 3 Products per Category | Chained CTEs + DENSE_RANK() OVER PARTITION — top revenue SKUs per category |
-| 6 | Cumulative YTD Revenue by Month | SUM(SUM()) OVER PARTITION BY year — running total that resets each January |
-| 7 | Channel Revenue Year-over-Year Shift | LAG() OVER PARTITION BY channel — compares each year to the prior year |
+| 1 | Return Rate by Product Category | CTE + DENSE_RANK() OVER PARTITION — ranks every product within its category by return rate for full leaderboard view |
+| 2 | Top 3 CLV Customers per Loyalty Tier | DENSE_RANK() OVER PARTITION + WHERE rnk <= 3 — filters to top 3 per tier, DENSE_RANK ensures no positions are skipped on ties |
+| 3 | 30-Day Moving Average Revenue | SUM() OVER with ROWS BETWEEN frame — smooths daily revenue over rolling 30 days |
+| 4 | Supplier Scorecard Ranked by Region | Weighted score in CTE + RANK() OVER PARTITION — best supplier per region |
+| 5 | Churn Risk by Loyalty Tier | MAX() + HAVING + SUBDATE — flags customers with no order in lookback window |
+| 6 | Channel Revenue Pivot by Quarter | CASE WHEN inside SUM() — three channel columns in one pass, no UNION |
+| 7 | Top 3 Products per Category | Chained CTEs + DENSE_RANK() OVER PARTITION — top revenue SKUs per category |
+| 8 | Cumulative YTD Revenue by Month | SUM(SUM()) OVER PARTITION BY year — running total that resets each January |
+| 9 | Channel Revenue Year-over-Year Shift | LAG() OVER PARTITION BY channel — compares each year to the prior year |
 
 📂 `sql/05_advanced_sql.sql`
 
@@ -159,24 +161,24 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 
 | Concept | Where Used |
 |---|---|
-| Multi-table INNER JOIN | Core Q1, Q10 |
-| CTE — single | Core Q6, Adv Q2, Q3 |
-| CTE — chained | Core Q2, Q4, Q5, Adv Q5 |
-| LEFT JOIN + COALESCE | Core Q2, Q4 |
-| WHERE vs HAVING | Core Q7 |
-| NOT EXISTS correlated subquery | Core Q8 |
-| String functions — SUBSTRING_INDEX, CONCAT | Core Q9 |
-| Multi-dimension GROUP BY | Core Q10 |
-| DENSE_RANK() OVER PARTITION BY | Core Q4, Q5, Adv Q5 |
-| RANK() OVER PARTITION BY | Adv Q2 |
-| LAG() window function | Adv Q7 |
-| ROWS BETWEEN — moving average frame | Adv Q1 |
-| Running total — SUM(SUM()) OVER | Adv Q6 |
-| CASE WHEN pivot inside SUM() | Adv Q4 |
-| Weighted score calculation in CTE | Adv Q2 |
-| HAVING on aggregate | Core Q7, Adv Q3 |
-| SUBDATE() date arithmetic | Adv Q3 |
-| Reusable analytical views | Core Q3, Adv Q7 |
+| Multi-table INNER JOIN | Core Q1, Q8 |
+| CTE — single | Core Q4, Adv Q4, Q5 |
+| CTE — chained | Core Q2, Adv Q1, Q2, Q7 |
+| LEFT JOIN + COALESCE | Core Q2, Adv Q1 |
+| WHERE vs HAVING | Core Q5 |
+| NOT EXISTS correlated subquery | Core Q6 |
+| String functions — SUBSTRING_INDEX, CONCAT | Core Q7 |
+| Multi-dimension GROUP BY | Core Q8 |
+| DENSE_RANK() OVER PARTITION BY | Adv Q1, Q2, Q7 |
+| RANK() OVER PARTITION BY | Adv Q4 |
+| LAG() window function | Adv Q9 |
+| ROWS BETWEEN — moving average frame | Adv Q3 |
+| Running total — SUM(SUM()) OVER | Adv Q8 |
+| CASE WHEN pivot inside SUM() | Adv Q6 |
+| Weighted score calculation in CTE | Adv Q4 |
+| HAVING on aggregate | Core Q5, Adv Q5 |
+| SUBDATE() date arithmetic | Adv Q5 |
+| Reusable analytical views | Core Q3, Adv Q9 |
 
 ---
 
@@ -184,14 +186,14 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 
 **Requirements:** MySQL 8.x · DBGate
 
-1. Run `sql/01_db_setup.sql` — creates the database and all 14 tables
-2. Import CSVs from `/data` in this order:
-   - `regions → states → cities → dates → channels → suppliers`
-   - `→ products → variants → customers → promotions`
-   - `→ orders → order_details → returns → return_details`
-3. Run `sql/02_data_cleaning.sql` — fixes schema and corrects tax lineage
-4. Run `sql/03_views.sql` — creates the 4 analytical views
-5. Explore `sql/04_core_analytics.sql` and `sql/05_advanced_sql.sql`
+1. Run 03_SQL/01_db_table_setup.sql    — creates the database and all 14 tables
+2. Import CSVs from 01_data/ in this order:
+   regions → states → cities → dates → channels → suppliers
+   → products → variants → customers → promotions
+   → orders → order_details → returns → return_details
+3. Run 03_SQL/02_data_cleaning.sql     — fixes schema and corrects tax lineage
+4. Run 03_SQL/03_views.sql             — creates the 4 analytical views
+5. Explore 03_SQL/04_core_analytics.sql and 03_SQL/05_advanced_SQL.sql
 
 > When importing `orders.csv` — ensure empty cells are treated as NULL. The `promo_id` column is intentionally NULL for non-promotional orders.
 
