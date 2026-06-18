@@ -1,0 +1,73 @@
+city_id,city_name,state_id,state_code,state_name
+1,Albuquerque,22,NM,New Mexico
+2,Atlanta,6,GA,Georgia
+3,Augusta,6,GA,Georgia
+4,Aurora,9,IL,Illinois
+5,Austin,13,TX,Texas
+6,Baton Rouge,15,LA,Louisiana
+7,Boston,3,MA,Massachusetts
+8,Boulder,23,CO,Colorado
+9,Bridgeport,4,CT,Connecticut
+10,Buffalo,1,NY,New York
+11,Charleston,8,SC,South Carolina
+12,Charlotte,7,NC,North Carolina
+13,Chicago,9,IL,Illinois
+14,Cincinnati,10,OH,Ohio
+15,Cleveland,10,OH,Ohio
+16,Colorado Springs,23,CO,Colorado
+17,Columbia,8,SC,South Carolina
+18,Columbus,10,OH,Ohio
+19,Dallas,13,TX,Texas
+20,Denver,23,CO,Colorado
+21,Detroit,11,MI,Michigan
+22,Duluth,12,MN,Minnesota
+23,Eugene,18,OR,Oregon
+24,Fayetteville,16,AR,Arkansas
+25,Fort Smith,16,AR,Arkansas
+26,Grand Rapids,11,MI,Michigan
+27,Greensboro,7,NC,North Carolina
+28,Greenville,8,SC,South Carolina
+29,Hartford,4,CT,Connecticut
+30,Henderson,20,NV,Nevada
+31,Houston,13,TX,Texas
+32,Jersey City,2,NJ,New Jersey
+33,Lansing,11,MI,Michigan
+34,Las Cruces,22,NM,New Mexico
+35,Las Vegas,20,NV,Nevada
+36,Little Rock,16,AR,Arkansas
+37,Los Angeles,17,CA,California
+38,Miami,5,FL,Florida
+39,Minneapolis,12,MN,Minnesota
+40,New Haven,4,CT,Connecticut
+41,New Orleans,15,LA,Louisiana
+42,New York,1,NY,New York
+43,Newark,2,NJ,New Jersey
+44,Norman,14,OK,Oklahoma
+45,Ogden,24,UT,Utah
+46,Oklahoma City,14,OK,Oklahoma
+47,Orlando,5,FL,Florida
+48,Phoenix,21,AZ,Arizona
+49,Portland,18,OR,Oregon
+50,Provo,24,UT,Utah
+51,Raleigh,7,NC,North Carolina
+52,Reno,20,NV,Nevada
+53,Rochester,1,NY,New York
+54,Rockford,9,IL,Illinois
+55,Saint Paul,12,MN,Minnesota
+56,Salem,18,OR,Oregon
+57,Salt Lake City,24,UT,Utah
+58,San Diego,17,CA,California
+59,San Francisco,17,CA,California
+60,Santa Fe,22,NM,New Mexico
+61,Savannah,6,GA,Georgia
+62,Scottsdale,21,AZ,Arizona
+63,Seattle,19,WA,Washington
+64,Shreveport,15,LA,Louisiana
+65,Spokane,19,WA,Washington
+66,Springfield,3,MA,Massachusetts
+67,Tacoma,19,WA,Washington
+68,Tampa,5,FL,Florida
+69,Trenton,2,NJ,New Jersey
+70,Tucson,21,AZ,Arizona
+71,Tulsa,14,OK,Oklahoma
+72,Worcester,3,MA,Massachusetts

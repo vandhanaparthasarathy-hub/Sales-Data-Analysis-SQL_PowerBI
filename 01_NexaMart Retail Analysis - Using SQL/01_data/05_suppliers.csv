@@ -1,0 +1,13 @@
+supplier_id,supplier_name,region,lead_time_days,rating
+1,TechNova Supply Co.,Northeast,7,4.8
+2,Pinnacle Electronics,West,10,4.5
+3,HomeHaven Distributors,Midwest,5,4.7
+4,KitchenPro Wholesale,South/Central,6,4.6
+5,ActiveGear Logistics,Southeast,8,4.4
+6,OutdoorEdge Supply,Southwest,12,4.2
+7,WellPath Health Dist.,Northeast,4,4.9
+8,BeautySource Inc.,West,5,4.7
+9,PageTurn Media Group,Midwest,6,4.3
+10,PlayWorld Distributors,Southeast,9,4.1
+11,SmartHome Solutions,South/Central,7,4.5
+12,PureLife Wellness,Southwest,5,4.8
