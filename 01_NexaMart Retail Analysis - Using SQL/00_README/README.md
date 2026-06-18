@@ -41,7 +41,7 @@ Please note that this synthetic data was created with the help of **Claude AI**.
 ## 📂 File Structure
 
 ```text
-    02_NexaMart Retail Analytics - Using SQL/
+    01_NexaMart Retail Analysis - Using SQL/
 ├── 00_README/
 │   └── README.md
 ├── 01_data/                           ← 14 CSV files
@@ -208,4 +208,4 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 
 ---
 
-[← Back to Portfolio](../README.md)
+[← Back to Portfolio](../00_README/README.md)
