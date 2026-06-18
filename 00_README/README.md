@@ -27,9 +27,8 @@ Data Analyst with 4+ years of experience retrieving and analyzing large, multi-s
 
 | # | Project | Domain | Tools | Status |
 |---|---|---|---|---|
-| 01 | [🚲 AdventureWorks KPI Analysis](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/01_AdventureWorks%20KPI%20Analysis) | Retail / Sales / Global | Power BI | ✅ Active |
-| 02 | [🛒 NexaMart Retail Analytics](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/02_NexaMart%20Retail%20Analytics) | Retail / E-commerce | MySQL  | ✅ Active |
-| 03 | [🛒 NexaMart Retail Analytics](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/02_NexaMart%20Retail%20Analytics) | Retail / E-commerce | MySQL · Power BI | 🔄 In Progress |
+| 01 | [🛒 01_NexaMart Retail Analysis - Using SQL](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/01_NexaMart%20Retail%20Analysis%20-%20Using%20SQL) | Retail / Sales / Global | Power BI | ✅ Active |
+| 02 | [🚲 02_AdventureWorks Data Visualization - Using Power BI](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI)| Retail / E-commerce | MySQL  | ✅ Active |
 
 *More projects coming soon.*
 
