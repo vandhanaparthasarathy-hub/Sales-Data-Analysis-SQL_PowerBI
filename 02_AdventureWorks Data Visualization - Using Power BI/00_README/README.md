@@ -210,7 +210,7 @@ Interactive Reports & Dashboards
 
 **Vandhana Parthasarathy**  
 Data Analyst | Power BI Developer  
-🔗 [LinkedIn](https://www.linkedin.com/in/vandhana-parthasarathy-be-mba-895852100/)   📧 [Email](vandhanaparthasarathy@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/vandhana-parthasarathy-be-mba-895852100/) · 📧 [Email](vandhanaparthasarathy@gmail.com) · 📝 [Resume](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/00_README/VandhanaParthasarathy-Resume.pdf)
 
 ---
 
