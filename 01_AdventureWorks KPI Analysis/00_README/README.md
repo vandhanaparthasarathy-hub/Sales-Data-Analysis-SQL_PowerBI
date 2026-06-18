@@ -118,55 +118,37 @@ Interactive Reports & Dashboards
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+```
 AdventureWorks-PowerBI/
-
 │
-
-├── AdventureWorks_Report.pbix                            # Main Power BI file
-
-├── /data                                                 # Raw source data (CSV)
-
-│   │
-
-│   ├──── Dimension Tables (Lookups) ──
-
-│   ├── 01_AdventureWorks_Calendar_Lookup.csv
-
-│   ├── 02_AdventureWorks_Customer_Lookup.csv
-
-│   ├── 03_AdventureWorks_Product_Categories_Lookup.csv
-
-│   ├── 04_AdventureWorks_Product_Subcategories_Lookup.csv
-
-│   ├── 05_AdventureWorks_Product_Lookup.csv
-
-│   ├── 06_AdventureWorks_Territory_Lookup.csv
-
-│   │
-
-│   ├──── Fact Tables ──
-
-│   ├── 07_AdventureWorks_Sales_Data_2020.csv
-
-│   ├── 08_AdventureWorks_Sales_Data_2021.csv
-
-│   ├── 09_AdventureWorks_Sales_Data_2022.csv
-
-│   └── 10_AdventureWorks_Returns_Data.csv
-
+├── 00_README/
+│   └── README.md                                         # Project documentation
 │
-
-├── /screenshots                                          # Dashboard preview images
-
-│   ├── executive_summary.png
-
-│   ├── product_detail.png
-
-│   ├── customer_detail.png
-
-│   └── map_view.png
-
-└── README.md
+├── 01_PowerBI File/
+│   └── Adventure-Works-PowerBI.pbix                     # Main Power BI report
+│
+├── 02_data/                                              # Raw source data (CSV)
+│   ├── 01_AdventureWorks Calendar Lookup.csv             # Dimension
+│   ├── 02_AdventureWorks Customer Lookup.csv             # Dimension
+│   ├── 03_AdventureWorks Product Categories Lookup.csv   # Dimension
+│   ├── 04_AdventureWorks Product Subcategories Lookup.csv# Dimension
+│   ├── 05_AdventureWorks Product Lookup.csv              # Dimension
+│   ├── 06_AdventureWorks Territory Lookup.csv            # Dimension
+│   ├── 07_AdventureWorks Sales Data 2020.csv             # Fact
+│   ├── 08_AdventureWorks Sales Data 2021.csv             # Fact
+│   ├── 09_AdventureWorks Sales Data 2022.csv             # Fact
+│   └── 10_AdventureWorks Returns Data.csv                # Fact
+│
+├── 03_Screenshots/                                       # Dashboard preview images
+│   ├── 01_Exec_Dashboard.png
+│   ├── 02_Map.png
+│   ├── 03_Product_Detail.png
+│   └── 04_Customer_Detail.png
+│
+└── 04_PDF/                                               # Exported PDF reports
+```
 ### 🗂️ Data Sources
 
 | # | File | Type | Description |
