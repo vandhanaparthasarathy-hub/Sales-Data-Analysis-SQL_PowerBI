@@ -23,7 +23,7 @@ The dashboard was developed as part of the **"Microsoft Power BI Desktop for Bus
 
 ## 📊 Dashboard Pages
 
-### Page 1 — Executive Summary
+### Page 1 — Exec Dashboard
 A high-level overview of company performance:
 
 | KPI | Value |
@@ -36,41 +36,46 @@ A high-level overview of company performance:
 **Visuals include:**
 - Revenue trend line chart (Jan 2020 – Jan 2022)
 - Total Orders by Category (Accessories, Bikes, Clothing)
-- Top 10 Products by Revenue, Profit, Orders & Return %
-- Monthly Revenue, Orders & Returns with MoM comparison
+- Top 10 Products based on Total number of Orders
+- Monthly Revenue, Orders, and, Returns with MoM comparison
 - Most Ordered & Most Returned Product Type highlights
 
 ---
 
-### Page 2 — Product Detail
-Drill-down view for individual product performance:
+### Page 2 — Geographic Map View
+- Interactive world map filtered by region: **Europe**, **North America**, **Pacific**
+- "Select All" toggle for global view
+
+---
+
+### Page 3 — Product Detail
+Drill through view for individual product performance ***(Referneced from Products in Top 10 Products Table of Page 1 - Exec Dashboard)***:
 
 - Monthly Orders, Revenue & Profit vs. Target (gauge charts)
 - Profit vs. Adjusted Profit trend (with dynamic **Price Adjustment %** slider)
 - Return % trend over time
 - Metric selector: switch between Orders, Revenue, Profit, Returns, Return %
-- Featured product: **Fender Set – Mountain**
+- Featured product: **Fender Set – Mountain** ***NOTE:*** *Choose to change the Products from Top 10 Products Table of Page 1 - Exec Dashboard*
 
 ---
 
-### Page 3 — Customer Detail
+### Page 4 — Customer Detail
 Customer segmentation and behaviour analysis:
 
 - **17.4K Unique Customers** | **$1,431 Revenue per Customer**
 - Total/Revenue trend over time (2020–2022)
 - Top 100 Customers ranked by Orders & Revenue
-- Orders by **Occupation** (Skilled Manual, Professional, Management)
-- Orders by **Income Level** (Low, Average, High)
+- Total Orders by **Occupation** (Skilled Manual, Professional, Management)
+- Total Orders by **Income Level** (Low, Average, High)
 - Year range slicer with highlighted top customer insights
 - **Top customer:** Mr. Maurice Shan — 6 orders, $12.4K revenue
 
 ---
+## 🏗️ Schema Design
 
-### Page 4 — Geographic Map View
-- Interactive world map filtered by region: **Europe**, **North America**, **Pacific**
-- "Select All" toggle for global view
+<img width="1412" height="782" alt="image" src="https://github.com/user-attachments/assets/451d4c83-701b-471a-9b24-7e5ff92e2753" />
 
----
+> Hybrid relational data structure - Star schema with `Sales Data` and `Returns Data` as the central fact tables surrounded by 4 main dimension tables, and a Snowflake schema with `Product Lookup` extended to `Product Subcategories Lookup` and `Product Categories Lookup` for Normalization. Measure Tables are also shown but are not connected to the main tables. 
 
 ## 🛠️ Tools & Technologies
 
@@ -85,9 +90,7 @@ Customer segmentation and behaviour analysis:
 
 ## 🔄 BI Workflow
 Raw Data Sources
-
 ↓
-
 Power Query Editor (Connect → Clean → Transform)
 
 ↓
@@ -230,4 +233,4 @@ Data Analyst | Power BI Developer
 
 ---
 
-*This project was completed as part of a structured Udemy course and is included in my data analytics portfolio to demonstrate proficiency in Power BI, DAX, and business intelligence reporting. I've included the Certificate of Completion under 04_Certificate for reference*
+*This project was completed as part of a structured Udemy course and is included in my data analytics portfolio to demonstrate proficiency in Power BI, DAX, and business intelligence reporting.*
