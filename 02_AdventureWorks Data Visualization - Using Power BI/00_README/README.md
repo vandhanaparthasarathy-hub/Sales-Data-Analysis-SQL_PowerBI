@@ -118,8 +118,6 @@ Interactive Reports & Dashboards
 
 ## 📁 Project Structure
 
-## 📁 Project Structure
-
 ```
 AdventureWorks-PowerBI/
 │
