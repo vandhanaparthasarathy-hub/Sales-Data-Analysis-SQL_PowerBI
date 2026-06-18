@@ -208,4 +208,12 @@ Four reusable views built to simplify analysis queries and avoid repeating compl
 
 ---
 
+## 👤 Author
+
+**Vandhana Parthasarathy**  
+Data Analyst | Power BI Developer  
+🔗 [LinkedIn](https://www.linkedin.com/in/vandhana-parthasarathy-be-mba-895852100/) · 📧 [Email](vandhanaparthasarathy@gmail.com) · 📝 [Resume](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/00_README/VandhanaParthasarathy-Resume.pdf)
+
+---
+
 [← Back to Portfolio](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/00_README#readme)
