@@ -41,11 +41,11 @@ Please note that this synthetic data was created with the help of **Claude AI**.
 ## 📂 File Structure
 
 ```text
-    02_NexaMart Retail Analytics/
+    02_NexaMart Retail Analytics - Using SQL/
 ├── 00_README/
 │   └── README.md
 ├── 01_data/                           ← 14 CSV files
-└── 03_SQL/
+└── 02_SQL/
     ├── 01_db_table_setup.sql          ← database + all table DDL
     ├── 02_data_cleaning.sql           ← schema fixes + tax lineage correction
     ├── 03_functional_queries.sql      ← reusable analytical views
