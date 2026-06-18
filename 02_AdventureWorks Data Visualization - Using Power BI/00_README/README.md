@@ -146,6 +146,7 @@ Interactive Reports & Dashboards
 │   └── 04_Customer_Detail.png
 │
 └── 04_PDF/                                               # Exported PDF reports
+    └── Adventure-Works-VandhanaParthasarathy.pdf        
 ```
 ### 🗂️ Data Sources
 
