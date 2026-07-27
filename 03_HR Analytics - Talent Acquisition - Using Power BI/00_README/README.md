@@ -269,13 +269,14 @@ The executive summary. Answers: *how is hiring performing overall?*
 
 **Visuals:**
 - Dynamic title card — updates with Year and Department slicer selections
-- 5 KPI cards — Total Applications, Offer Acceptance Rate, Avg Days to Hire, Hiring vs Plan %, Pipeline at Risk
+- 5 KPI cards — Total Applications, Offer Acceptance Rate, Avg Days to Hire, Hiring vs Plan %
+- Gauge 1 — **Hired vs Posted Positions** (Total Hires needle vs Total Positions marker)
+- Gauge 2 — **Positions Posted vs Target Hire** (Total Positions needle vs Target Hires marker)
 - Line + Clustered Column chart — Monthly Hires (gold bars) vs Applications (violet line)
 - Waterfall chart — Hiring vs Plan by Department, green = over plan, red = behind
-- Gauge 1 — **Hired vs Posted Positions** (Total Hires needle vs Total Positions marker)
-- Gauge 2 — **Posted Positions vs Target Hire** (Total Positions needle vs Target Hires marker)
 - What-if slider — Conversion Boost % → Projected Hires card
 - What-if slider — Target Headcount → Headcount Gap card
+- Pipeline Errors — Jobs that were not closed after filling, Applications that were not re-assigned after a recruiter left the company
 
 **Key numbers:** 236 hires made · 291 positions posted · 316 target hires planned
 
@@ -288,9 +289,9 @@ The executive summary. Answers: *how is hiring performing overall?*
 Tracks candidate progression through all five hiring stages.
 
 **Visuals:**
-- 4 KPI cards — cumulative All_ counts with conversion rates
+- 4 KPI cards — Total Applications, Total Screened, Total Intervied and Total Hired
 - Funnel chart — visualises the narrowing pipeline using cumulative stage measures
-- 100% Stacked Bar — stage distribution by source
+- Stacked Column Chart — stage distribution by source
 - Matrix with heatmap — Stage × Department conversion rates, colour scaled red → gold → green
 - Stage summary table — stage name, cumulative count, stage transition, conversion rate
 - Callout cards — Biggest Drop-off stage (e.g. "Interview → Offered") and Least Drop-off stage
@@ -304,10 +305,11 @@ Tracks candidate progression through all five hiring stages.
 Measures recruiting speed at department and job level.
 
 **Visuals:**
-- 4 KPI cards — Avg Days to Hire (conditional colour), Avg Days to Offer, Time to Fill, Fastest Department
-- Horizontal bar chart — Avg Days to Hire by Department, colour-coded: green <30d, amber 30–50d, red >50d
+- 4 KPI cards — Avg Days to Hire, Avg Days to Offer, Time to Fill, Fastest Department to fill a role
+- Horizontal bar chart — Avg Days to Hire by Department, colour-coded: green <45d, amber 45-55d, red >55d
 - Grouped bar chart — Time to Hire vs Time to Fill side by side per department
 - Rolling 90 Day Hires trend line
+- Grouped column chart — Time to Hire vs Time to Fill side by side across job levels
 
 **Story:** Engineering takes the longest to hire. The gap between Time to Hire and Time to Fill reveals how long roles were posted before the first application arrived — a sourcing lag, not a recruiter speed problem.
 
@@ -319,12 +321,12 @@ Evaluates the effectiveness and cost of each recruitment channel.
 
 **Visuals:**
 - 4 KPI cards — Total Sourcing Cost, Cost Per Hire, Top Source, Best Quality Source
-- Scatter quadrant — Source Quality Index (Y) vs Cost Per Hire (X), sized by Total Applications, coloured by Source Type. Median reference lines create four labelled quadrants: Sweet Spot, Premium, Low Value, Costly & Weak
-- Horizontal bar chart — Total Hires by Source, sorted and coloured by source
 - Monthly Sourcing Cost line chart — spend per channel over time including Referral bonus costs
-- Source detail table — all 7 sources with Applications, Hires, Quality Index, Cost Per Hire
+- Scatter quadrant — Source Quality Index (Y) vs Cost Per Hire (X), sized by Total Applications, coloured by Source Type. Median reference lines create four labelled quadrants: Sweet Spot has a High Quality with Low Cost, Premium has a High Quality with High Cost, Low Value has a Low Quality with Low Cost and  Costly & Weak a Low Quality with High Cost
+- Horizontal bar chart — Total Hires by Source, sorted and coloured by source
+- Source detail table — all 7 sources with Applications, Hires, Cost Per Hire, Quality Index and their Ranks, based on the total hires
 
-**Story:** Referral sits in the Sweet Spot — highest quality, lowest effective cost. Agency sits in Costly & Weak — high spend, mediocre output.
+**Story:** Referral sits in the Sweet Spot — highest quality, yet, lowest effective cost. Agency sits in Costly & Weak which has a high spend, mediocre output.
 
 ---
 
@@ -333,13 +335,12 @@ Evaluates the effectiveness and cost of each recruitment channel.
 Tracks representation across gender, ethnicity, and age through every hiring stage.
 
 **Visuals:**
-- 5 KPI cards — Female Hire Rate, Male Hire Rate, Non-binary Hire Rate, Ethnic Minority Hire Rate, Largest Minority Group
-- 100% Stacked Bar (gender) — gender split at each funnel stage
-- 100% Stacked Bar (ethnicity) — ethnicity split at each funnel stage
+- 5 KPI cards — Ethnic Diversity, Top Minority Group, Female Hire Rate, Male Hire Rate, Average age when Hired
 - Horizontal bar chart — Hires by Ethnicity with ethnicity-matched colour formatting
-- Horizontal bar chart — Hires by AgeGroup showing age distribution of hired candidates
-- KPI visual — Female Hire Rate vs 50% target with monthly trend axis
-- Gauge — Female Hire Rate vs 50% benchmark
+- 100% Stacked Bar (ethnicity) — ethnicity split at each funnel stage
+- 100% Stacked Bar (gender) — gender split at each funnel stage
+- Pie Chart — Hires by AgeGroup showing age distribution of hired candidates
+- Gauge — Female Hire Rate vs 40% benchmark
 
 > *Diversity data is self-reported and shown in aggregate only. No individual candidate is identifiable. Data covers 2023–2026.*
 
@@ -350,19 +351,19 @@ Tracks representation across gender, ethnicity, and age through every hiring sta
 Accessed by right-clicking any department bar on the Overview waterfall → Drillthrough → Offer Intelligence. Filtered to the selected department automatically.
 
 **Visuals:**
-- 4 KPI cards — Total Offers, Offer Acceptance Rate, Over Budget Offers, Avg Salary Offered
+- 5 KPI cards — Selected Department, Total Offers, Offer Acceptance Rate, Over Budget Offers, Avg Salary Offered
+- Decomposition Tree — Total Offers broken down interactively by Source Name → Job Level → Recruited  
 - Budget scatter plot — Avg Salary Offered (Y) vs Avg Budget Per Position (X), coloured by Job Level. Ratio line marks the on-budget diagonal — points above are over budget
-- Decomposition Tree — Total Offers broken down interactively by Department → Job Level → Source Name
-- Recruiter performance table — Top 5 recruiters by hire volume showing: Name, Applications, Hires, Avg Days to Hire, Acceptance %, Recruiter Status (colour-coded Active/Inactive)
+- Recruiter performance table — Top 5 recruiters by hire volume showing: Name, Applications, Hires, Avg Days to Hire, Acceptance %, Recruiter Status (colour-coded)
 - Back button — returns to Funnel Analysis page
 
-**Story:** Director-level Engineering roles have the lowest offer acceptance rate. Agency-sourced candidates decline offers at a significantly higher rate than Referral candidates. Two recruiters who left mid-2024 left active pipelines without formal handover.
+**Story:** Junior roles are offered salaries significantly below their approved budget, while the trend is reversed as seniority increases.
 
 ---
 
 ## 💬 Custom Tooltips
 
-Two custom tooltip pages built in the Obsidian Gold theme — `#13131A` canvas, `#F5C84233` gold border, transparent visual backgrounds.
+Two custom tooltip pages built for Source and Department.
 
 ### Tooltip — Source (Page 4)
 
@@ -372,31 +373,17 @@ Appears on hover over source bars and scatter bubbles. Canvas: 320 × 240px.
 
 ### Tooltip — Department (Pages 1 and 3)
 
-Appears on hover over department bars on the Overview waterfall and Time to Hire chart. Canvas: 300 × 220px.
+Appears on hover over department bars on the Overview waterfall and Time to Hire chart. Canvas: 260 × 330px.
 
 **Shows:** Department name · Total Hires · Hiring vs Plan % · Avg Days to Hire · Offer Acceptance Rate · Hires by Job Level mini bar chart
 
 ---
 
-## 🎨 Design System — Obsidian Gold
+## 🏗️ Schema Design
 
-| Element | Colour |
-|---|---|
-| Canvas | `#0A0A0F` |
-| Card backgrounds | `#13131A` |
-| Borders | `#1E1E2E` |
-| Primary text | `#FAFAFA` |
-| Label / secondary text | `#6B7280` |
-| Gold accent | `#F5C842` |
-| Violet | `#A78BFA` |
-| Emerald (positive) | `#36D399` |
-| Blue | `#60A5FA` |
-| Orange | `#FB923C` |
-| Pink | `#F472B6` |
-| Positive delta | `#36D399` |
-| Negative delta | `#F87171` |
+<img width="1027" height="751" alt="image" src="https://github.com/user-attachments/assets/85f59575-aabe-4917-9555-6a44e766390b" />
 
-Applied via a custom JSON theme file. All conditional colour logic is driven by DAX colour measures returning hex strings — no hardcoded colours in visual settings.
+> Hybrid relational data structure - Snowflake schema with `Applications` as the central fact tables surrounded by 11 dimension tables after Normalization.
 
 ---
 
@@ -406,7 +393,7 @@ Applied via a custom JSON theme file. All conditional colour logic is driven by 
 |---|---|
 | Microsoft Power BI Desktop | Report building and visualisation |
 | Power Query Editor | Data ingestion, cleaning, and normalisation |
-| DAX | 76 measures — funnel, time intelligence, cost, diversity, colour |
+| DAX | 77 measures — funnel, time intelligence, cost, diversity, colour |
 | Python 3 (Jupyter Notebook) | Synthetic dataset generation |
 | GenAI (text-based) | Dataset design, script iteration, documentation support |
 | GitHub | Version control and portfolio hosting |
@@ -418,10 +405,10 @@ Applied via a custom JSON theme file. All conditional colour logic is driven by 
 ```
 Prompt-driven Python script development (GenAI-assisted, Jupyter Notebook)
 ↓
-HiringData_Flat.csv · HeadcountPlan.csv · SourceCosts.csv
+01_HiringData_Flat.csv · 02_HeadcountPlan.csv · 03_SourceCosts.csv
 ↓
 Power Query Editor
-  Tier 1 — Source cleaning    (HiringData_Flat — load disabled)
+  Tier 1 — Source cleaning    (01_HiringData_Flat — load disabled)
   Tier 2 — Business logic     (Applications Reference query)
   Tier 3 — Dimension cleaning (each Dim Reference query)
   ReferralSpend appended to SourceCosts
@@ -429,7 +416,7 @@ Power Query Editor
 Star schema data model (12 tables)
   Active + inactive date relationships · USERELATIONSHIP in DAX
 ↓
-76 DAX measures (MeasureTable)
+77 DAX measures (MeasureTable)
   Cumulative funnel · Time intelligence · Cost · Diversity · Colour
 ↓
 6-page dashboard + 2 custom tooltip pages
@@ -455,14 +442,12 @@ GitHub portfolio
 │   └── HR_Analytics.pbix                      # Main Power BI report
 │
 ├── 02_Data/
-│   ├── HiringData_Flat.csv                    # Raw flat file (8,645 rows)
-│   ├── HeadcountPlan.csv                      # Quarterly hiring targets (78 rows)
-│   ├── SourceCosts.csv                        # Monthly channel spend (267 rows)
-│   ├── Departments.xlsx                       # Department reference data (6 rows)
-│   └── hiring_data_generator.py               # Python script
+│   ├── 01_HiringData_Flat.csv                    # Raw flat file (8,645 rows)
+│   ├── 02_HeadcountPlan.csv                      # Quarterly hiring targets (78 rows)
+│   ├── 03_SourceCosts.csv                        # Monthly channel spend (267 rows)
+│   └── hiring_data_generator.py                  # Python script
 │
 ├── 03_Screenshots/
-│   ├── 00_schema.png                          # Data model diagram
 │   ├── 01_overview.png                        # Page 1 — Overview
 │   ├── 02_funnel_analysis.png                 # Page 2 — Funnel Analysis
 │   ├── 03_time_to_hire.png                    # Page 3 — Time to Hire
