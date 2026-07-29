@@ -1,0 +1,79 @@
+Department,Quarter,TargetHires
+Engineering,2023-Q1,17
+Engineering,2023-Q2,11
+Engineering,2023-Q3,9
+Engineering,2023-Q4,4
+Engineering,2024-Q1,11
+Engineering,2024-Q2,2
+Engineering,2024-Q3,8
+Engineering,2024-Q4,1
+Engineering,2025-Q1,9
+Engineering,2025-Q2,7
+Engineering,2025-Q3,7
+Engineering,2025-Q4,8
+Engineering,2026-Q1,8
+Sales,2023-Q1,17
+Sales,2023-Q2,0
+Sales,2023-Q3,4
+Sales,2023-Q4,3
+Sales,2024-Q1,8
+Sales,2024-Q2,6
+Sales,2024-Q3,4
+Sales,2024-Q4,0
+Sales,2025-Q1,10
+Sales,2025-Q2,4
+Sales,2025-Q3,8
+Sales,2025-Q4,2
+Sales,2026-Q1,8
+Marketing,2023-Q1,3
+Marketing,2023-Q2,4
+Marketing,2023-Q3,3
+Marketing,2023-Q4,0
+Marketing,2024-Q1,3
+Marketing,2024-Q2,4
+Marketing,2024-Q3,0
+Marketing,2024-Q4,3
+Marketing,2025-Q1,2
+Marketing,2025-Q2,2
+Marketing,2025-Q3,2
+Marketing,2025-Q4,2
+Marketing,2026-Q1,2
+Product,2023-Q1,0
+Product,2023-Q2,4
+Product,2023-Q3,0
+Product,2023-Q4,6
+Product,2024-Q1,3
+Product,2024-Q2,7
+Product,2024-Q3,2
+Product,2024-Q4,3
+Product,2025-Q1,4
+Product,2025-Q2,2
+Product,2025-Q3,6
+Product,2025-Q4,2
+Product,2026-Q1,3
+Customer Success,2023-Q1,0
+Customer Success,2023-Q2,3
+Customer Success,2023-Q3,12
+Customer Success,2023-Q4,0
+Customer Success,2024-Q1,3
+Customer Success,2024-Q2,0
+Customer Success,2024-Q3,7
+Customer Success,2024-Q4,1
+Customer Success,2025-Q1,3
+Customer Success,2025-Q2,3
+Customer Success,2025-Q3,3
+Customer Success,2025-Q4,3
+Customer Success,2026-Q1,3
+HR,2023-Q1,3
+HR,2023-Q2,3
+HR,2023-Q3,0
+HR,2023-Q4,3
+HR,2024-Q1,0
+HR,2024-Q2,4
+HR,2024-Q3,0
+HR,2024-Q4,4
+HR,2025-Q1,2
+HR,2025-Q2,4
+HR,2025-Q3,2
+HR,2025-Q4,2
+HR,2026-Q1,0
