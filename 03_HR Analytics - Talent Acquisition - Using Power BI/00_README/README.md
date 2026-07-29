@@ -17,7 +17,6 @@ The dataset was purpose-built using a custom **Python script**, with deliberate 
 - Apply structured **data cleaning and transformation** in Power Query across three tiers
 - Build a fully normalised **star schema** data model with 12 connected tables
 - Write purposeful **DAX measures** for time intelligence, cumulative funnel analysis, cost attribution, and diversity metrics
-- Design a professional, dark-themed multi-page dashboard following the **Obsidian Gold** design system
 - Surface a compelling analytical story: a three-layer hiring gap between planning, sourcing, and conversion
 
 ---
@@ -28,7 +27,7 @@ The dataset does not come from an external source. It was **generated from scrat
 
 ### Why Python — not Excel
 
-The initial approach considered building the dataset directly in Excel. This was quickly ruled out — Excel files are extremely token-heavy when passed to a GenAI model for refinement, making iteration slow and impractical. Instead, the decision was made to shift to a **Python script approach**: prompting the model to generate code rather than data, then running the code locally to produce output files of any desired size.
+The initial approach considered building the dataset directly in Excel. This was quickly ruled out — as Excel files were extremely token-heavy when passed to a GenAI model for refinement, making iteration slow and impractical. Instead, I shifted to a **Python script approach**: prompting the model to generate code rather than data, then running the code locally to produce output files of any desired size.
 
 This turned out to be a significantly more efficient and scalable workflow:
 
@@ -53,23 +52,23 @@ The final script required no external libraries — only Python built-ins (`csv`
 
 | File | Rows | Purpose |
 |---|---|---|
-| `HiringData_Flat.csv` | 8,645 | Single denormalised source — all dimensions and facts in one file |
-| `HeadcountPlan.csv` | 78 | Quarterly hiring targets by department |
-| `SourceCosts.csv` | 267 | Monthly recruitment channel spend (6 sources) |
-
+| `01_HiringData_Flat.csv` | 8,645 | Single denormalised source — all dimensions and facts in one file |
+| `02_HeadcountPlan.csv` | 78 | Quarterly hiring targets by department |
+| `03_SourceCosts.csv` | 267 | Monthly recruitment channel spend (6 sources) |
+| `04_Department-ManualUpdate.csv`| 6 |Created and maintained manually to hold department metadata not present in the transactional data. Updated to teh FlatFile using XLOOP to have it available in the Main `01_HiringData_Flat.csv`| 
 ---
 
 ## 🔄 ETL — Extract, Transform, Load
 
 ### Extract
 
-All three CSV files were loaded into **Power Query Editor** in Power BI Desktop. `HiringData_Flat.csv` was loaded with **Enable Load disabled** — it exists in Power Query as the raw source for all Reference queries but is never loaded into the model directly. This keeps the model clean while preserving full audit access to the original data.
+All three CSV files were loaded into **Power Query Editor** in Power BI Desktop. `01_HiringData_Flat.csv` was loaded with **Disabled Load** — it exists in Power Query as the raw source for all Reference queries but is never loaded into the model directly. This keeps the model clean while preserving full audit access to the original data.
 
 ### Transform — Three-Tier Cleaning Structure
 
 Cleaning was applied in three tiers to reflect where each type of error belongs in the data flow:
 
-**Tier 1 — HiringData_Flat (source query)**
+**Tier 1 — 01_HiringData_Flat (source query)**
 
 Structural errors that affect all downstream Reference queries were fixed at source:
 
@@ -83,6 +82,7 @@ Structural errors that affect all downstream Reference queries were fixed at sou
 - Filtered future-dated ApplicationDates (post April 2026)
 - Flagged posting closure errors (4 rows — JOB001 and JOB002, January–March 2023)
 
+
 **Tier 2 — Applications table (Reference query)**
 
 Business logic errors affecting metrics only:
@@ -94,14 +94,26 @@ Business logic errors affecting metrics only:
 - Added `ValidApplication` flag — marks rows meeting all expected data quality conditions
 - Added `OfferDeclined` calculated column in Data view — Yes for Offered stage rows, No for all others
 
-**Tier 3 — Dimension queries**
+**Tier 3 — Dimension queries (Reference queries from 01_HiringData_Flat)**
 
-Attribute-specific cleanup in each dimension:
+Each Reference query inherited all 50 columns from the source and was trimmed to only the columns relevant to that entity. Remove Duplicates was applied on each primary key to produce one row per unique entity — this is the core normalisation step that reduces cardinality and separates descriptive attributes from the fact table.
 
-- `Candidates` — extracted FirstName and LastName via Split Column, calculated Age from DateOfBirth, derived AgeGroup brackets, removed duplicates on CandidateID
-- `Jobs` — removed Department text columns after DeptID generation, removed duplicates on JobID, added `JobLevelOrder` calculated column for correct level sorting
-- `Recruiters` — replaced blank RecruiterEndDate with null, set to Date type, removed duplicates on RecruiterID
-- `Departments` — loaded from a separate Excel reference file; DeptID generated using Index column and Text.PadStart for zero-padded IDs
+- **Candidates** — retained candidate columns only · Split CandidateName into FirstName and LastName · calculated Age from DateOfBirth · derived AgeGroup as a conditional column 
+- **Jobs** — retained job columns only · DeptID carried through from Tier 1 
+- **Sources** — retained SourceID, SourceName, SourceType 
+- **Recruiters** — replaced blank RecruiterEndDate with null · set to Date type
+- **Hiring Managers** — retained HiringManagerID and descriptive columns 
+- **Position Slots** — retained PositionSlotID and JobID · extracted SlotNumber using Text.AfterDelimiter on the hyphen
+- 
+**Tier 3b — Manually maintained reference tables**
+
+Two tables were prepared outside the flat file and loaded separately:
+
+- DepartmentName, DeptHead, DeptHeadEmail, DepartmentNameShort · DepartmentID generated in Power Query using Index column + Text.PadStart → **DEPT01 to DEPT06** · loaded as the Departments table · connected to Jobs via DepartmentID
+- **HeadcountPlan (CSV)** — loaded from the generator output · original columns were Department, Quarter, TargetHires only · enriched in Power Query with: QuarterStartDate (Date type — enables inactive relationship to Dates), Year and Quarter split from the Quarter string, DepartmentID mapped via conditional column, HeadCountPlanID generated as a surrogate key → **78 rows**
+- **SourceCosts (CSV)** — loaded from the generator output · MonthDate added as a Date type column — enables inactive relationship to Dates · SourceCostID added as a surrogate key · ReferralSpend query created separately from Applications (Hired + Referral rows grouped by month) and **appended** into SourceCosts → **300 rows total covering all 7 sources**
+
+
 
 **Referral cost appended to SourceCosts**
 
