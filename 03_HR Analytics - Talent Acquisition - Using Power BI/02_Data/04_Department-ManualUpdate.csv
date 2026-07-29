@@ -1,7 +1,0 @@
-DepartmentID,DepartmentName,DeptHead,DeptHeadEmail
-DEPT01,Engineering,James Whitfield,j.whitfield@techcorp.io
-DEPT02,Sales,Tom Hargreaves,t.hargreaves@techcorp.io
-DEPT03,Marketing,Raj Kapoor,r.kapoor@techcorp.io
-DEPT04,Product,Anya Ivanova,a.ivanova@techcorp.io
-DEPT05,Customer Success,Ben Okafor,b.okafor@techcorp.io
-DEPT06,HR,Claire Fontaine,c.fontaine@techcorp.io
