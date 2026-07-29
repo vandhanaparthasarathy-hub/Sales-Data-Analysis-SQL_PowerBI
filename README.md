@@ -29,7 +29,7 @@ Data Analyst with 4+ years of experience retrieving and analyzing large, multi-s
 |---|---|---|---|---|
 | 01 | [🛒 01_NexaMart Retail Analysis - Using SQL](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/01_NexaMart%20Retail%20Analysis%20-%20Using%20SQL) | Retail / Sales / Global | Power BI | ✅ Active |
 | 02 | [🚲 02_AdventureWorks Data Visualization - Using Power BI](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI)| Retail / E-commerce | MySQL  | ✅ Active |
-
+| 03 | [👥 03_HR Analytics — Talent Acquisition Intelligence Dashboard](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI)| HR / Talent Aquisition | Power BI  | ✅ Active |
 *More projects coming soon.*
 
 ---
