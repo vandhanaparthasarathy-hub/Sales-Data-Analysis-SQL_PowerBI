@@ -104,15 +104,14 @@ Each Reference query inherited all 50 columns from the source and was trimmed to
 - **Recruiters** — replaced blank RecruiterEndDate with null · set to Date type
 - **Hiring Managers** — retained HiringManagerID and descriptive columns 
 - **Position Slots** — retained PositionSlotID and JobID · extracted SlotNumber using Text.AfterDelimiter on the hyphen
+- **Departments** — retained DepartmentID, Name, Head and Email
 - 
 **Tier 3b — Manually maintained reference tables**
 
 Two tables were prepared outside the flat file and loaded separately:
 
-- DepartmentName, DeptHead, DeptHeadEmail, DepartmentNameShort · DepartmentID generated in Power Query using Index column + Text.PadStart → **DEPT01 to DEPT06** · loaded as the Departments table · connected to Jobs via DepartmentID
 - **HeadcountPlan (CSV)** — loaded from the generator output · original columns were Department, Quarter, TargetHires only · enriched in Power Query with: QuarterStartDate (Date type — enables inactive relationship to Dates), Year and Quarter split from the Quarter string, DepartmentID mapped via conditional column, HeadCountPlanID generated as a surrogate key → **78 rows**
 - **SourceCosts (CSV)** — loaded from the generator output · MonthDate added as a Date type column — enables inactive relationship to Dates · SourceCostID added as a surrogate key · ReferralSpend query created separately from Applications (Hired + Referral rows grouped by month) and **appended** into SourceCosts → **300 rows total covering all 7 sources**
-
 
 
 **Referral cost appended to SourceCosts**
@@ -161,113 +160,6 @@ The model follows a **star schema** with the `Applications` table as the central
 - `SourceCosts` connects to `Sources` via SourceID and to `Dates` via an inactive relationship on MonthDate — activated in the Total Sourcing Cost measure using `USERELATIONSHIP()`.
 - `HeadcountPlan` connects to `Departments` via DepartmentID and to `Dates` via QuarterStartDate.
 - `Dates` is marked as a Date Table (Table Tools → Mark as Date Table) — required for all time intelligence DAX functions to work correctly.
-
----
-
-## 📐 DAX — Highlighted Measures
-
-All measures are stored in a dedicated `MeasureTable`. The model contains 76 measures in total covering funnel analysis, time intelligence, cost attribution, diversity metrics, scenario modelling, and conditional colour formatting.
-
----
-
-### 1 — Dynamic page title (Dynamic Title)
-
-Each page has a dynamic title card that updates automatically when slicers change. The base measure appends the selected department name to create a contextual heading.
-
-```dax
-Dynamic Title =
-"Talent Acquisition · " &
-COALESCE(
-    SELECTEDVALUE(Departments[DepartmentName]),
-    "All Departments"
-)
-```
-
-A variant without the page prefix is used across Pages 2–6, keeping the measure reusable across the entire report without duplication.
-
----
-
-### 2 — Cumulative funnel stages (All Screened)
-
-The funnel chart requires cumulative counts — not point-in-time counts. A candidate who was hired passed through every prior stage. Without cumulative measures, the funnel bars would not narrow correctly and conversion rates would be understated.
-
-```dax
-All Screened =
-CALCULATE(
-    COUNTROWS(Applications),
-    Applications[StageID] IN {"STG02","STG03","STG04","STG05"}
-)
-```
-
-This pattern repeats for All Interviewed, All Offered, and All Hired. Conversion rates are then the ratio between consecutive measures — for example `Screen Rate % = DIVIDE([All Screened], [All Applied])`.
-
----
-
-### 3 — Total Sourcing Cost using USERELATIONSHIP
-
-SourceCosts connects to the Dates table via an inactive relationship on `MonthDate`. Using the active relationship (ApplicationDate) would cause incorrect filtering. `USERELATIONSHIP()` temporarily activates the correct relationship inside the measure context only — without affecting any other visual on the page.
-
-```dax
-Total Sourcing Cost =
-CALCULATE(
-    SUM(SourceCosts[MonthlyCost]),
-    USERELATIONSHIP(Dates[Date], SourceCosts[MonthDate])
-)
-```
-
----
-
-### 4 — Year-over-year hiring change (Hires YoY %)
-
-Uses `SAMEPERIODLASTYEAR()` — a time intelligence function that shifts the filter context back exactly one year. The result updates dynamically as the Year slicer changes, comparing like-for-like periods automatically.
-
-```dax
-Hires YoY % =
-VAR CurrentHires = [Total Hires]
-VAR PriorHires =
-    CALCULATE(
-        [Total Hires],
-        SAMEPERIODLASTYEAR(Dates[Date])
-    )
-RETURN
-    DIVIDE(CurrentHires - PriorHires, PriorHires)
-```
-
-`VAR` stores each result once — improving readability and preventing `[Total Hires]` from being evaluated twice. `DIVIDE()` handles division by zero gracefully throughout all ratio measures.
-
----
-
-### 5 — Conditional colour for KPI formatting (Offer Acceptance Colour)
-
-Returns a hex colour string based on a three-tier threshold. Applied via the `fx` conditional formatting option on card values and table columns — making colour logic explicit, reusable, and independent of visual settings.
-
-```dax
-Offer Acceptance Colour =
-VAR Rate = [Offer Acceptance Rate]
-RETURN
-    IF(Rate >= 0.75, "#36D399",
-    IF(Rate >= 0.60, "#F5C842",
-    "#F87171"))
-```
-
-Ten colour measures follow this pattern across the model — covering departments, sources, stages, gender, ethnicity, recruiter status, plan status, budget variance, and gauge fill.
-
----
-
-### 6 — COALESCE for null-safe KPI cards
-
-Any count measure risks showing blank when no matching rows exist in the current filter context. `COALESCE()` replaces blank with zero, ensuring cards always display a value rather than appearing broken.
-
-```dax
-Data Quality Issues =
-COALESCE(
-    CALCULATE(
-        COUNTROWS(Applications),
-        Applications[PostingClosureError] = "Yes"
-    ),
-    0
-)
-```
 
 ---
 
@@ -423,6 +315,7 @@ Power Query Editor
   Tier 1 — Source cleaning    (01_HiringData_Flat — load disabled)
   Tier 2 — Business logic     (Applications Reference query)
   Tier 3 — Dimension cleaning (each Dim Reference query)
+  Tier 3b — Reference Table Cleaning (Load, Clean and Connect Independent Queries)
   ReferralSpend appended to SourceCosts
 ↓
 Star schema data model (12 tables)
