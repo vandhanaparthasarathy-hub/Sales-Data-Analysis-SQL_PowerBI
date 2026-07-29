@@ -176,9 +176,24 @@ Further, two supporting tables (HeadcountPlan and SourceCosts) connect to dimens
 
 ---
 
-## 📊 Dashboard Pages
+## 📸 Dashboard Preview
+
+| Overview | Funnel Analysis |
+|---|---|
+| ![Overview](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/01_overview.png) | ![Funnel Analysis](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/02_funnel_analysis.png) |
+
+| Time to Hire | Source Impact |
+|---|---|
+| ![Time To Hire](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/03_time_to_hire.png) | ![Source Impact](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/04_source_impact.png) |
+
+| Diversity Pipeline | Offer Intelligence |
+|---|---|
+| ![Diversity Pipeline](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/05_diversity_pipeline.png) | ![Offer Intelligence](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/06_offer_intelligence.png) |
 
 ---
+
+## 📊 Dashboard Pages
+
 
 ### Page 1 — Overview
 
@@ -379,22 +394,6 @@ GitHub portfolio
 | 02 | `HeadcountPlan.csv` | Generated | 78 | Quarterly hiring targets set at 112% of actual positions |
 | 03 | `SourceCosts.csv` | Generated | 267 | Monthly spend for 6 channels with YoY growth and seasonal spikes |
 | 04 | `Departments.xlsx` | Reference | 6 | Department metadata — head, email, short name |
-
----
-
-## 📸 Dashboard Preview
-
-| Overview | Funnel Analysis |
-|---|---|
-| ![Overview](03_Screenshots/01_overview.png) | ![Funnel](03_Screenshots/02_funnel_analysis.png) |
-
-| Time to Hire | Source Impact |
-|---|---|
-| ![Time to Hire](03_Screenshots/03_time_to_hire.png) | ![Source Impact](03_Screenshots/04_source_impact.png) |
-
-| Diversity Pipeline | Offer Intelligence |
-|---|---|
-| ![Diversity](03_Screenshots/05_diversity_pipeline.png) | ![Offer Intel](03_Screenshots/06_offer_intelligence.png) |
 
 ---
 
