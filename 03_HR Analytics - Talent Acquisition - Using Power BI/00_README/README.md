@@ -363,14 +363,14 @@ GitHub portfolio
 ├── 00_README/
 │   └── README.md                              # This file
 │
-├── 01_PowerBI/
+├── 01_PowerBI - pbix file/
 │   └── HR_Analytics.pbix                      # Main Power BI report
 │
 ├── 02_Data/
 │   ├── 01_HiringData_Flat.csv                    # Raw flat file (8,645 rows)
 │   ├── 02_HeadcountPlan.csv                      # Quarterly hiring targets (78 rows)
 │   ├── 03_SourceCosts.csv                        # Monthly channel spend (267 rows)
-│   └── hiring_data_generator.py                  # Python script
+│   └── 04_GenAI-PythonFile.py                  # Python script
 │
 ├── 03_Screenshots/
 │   ├── 01_overview.png                        # Page 1 — Overview
@@ -378,7 +378,9 @@ GitHub portfolio
 │   ├── 03_time_to_hire.png                    # Page 3 — Time to Hire
 │   ├── 04_source_impact.png                   # Page 4 — Source Impact
 │   ├── 05_diversity_pipeline.png              # Page 5 — Diversity Pipeline
-│   └── 06_offer_intelligence.png              # Page 6 — Offer Intelligence
+│   |── 06_offer_intelligence.png              # Page 6 — Offer Intelligence
+│   ├── 07_tooltip_source.png                  # Tooltip 1 - Tooltip Source
+│   └── 08_tooltip_dept.png                    # Tooltip 2 - Tooltip Dept
 │
 └── 04_PDF/
     └── HR_Analytics_Dashboard.pdf             # Exported PDF of all pages
