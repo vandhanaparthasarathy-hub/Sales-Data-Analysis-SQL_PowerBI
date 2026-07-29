@@ -25,11 +25,12 @@ Data Analyst with 4+ years of experience retrieving and analyzing large, multi-s
 
 ## 📁 Projects
 
-| # | Project | Domain | Tools | Status |
+| # | Project | Domain | Tools | Preview |
 |---|---|---|---|---|
-| 01 | [🛒 01_NexaMart Retail Analysis - Using SQL](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/01_NexaMart%20Retail%20Analysis%20-%20Using%20SQL) | Retail / Sales / Global | MySQL | ✅ Active |
-| 02 | [🚲 02_AdventureWorks Data Visualization - Using Power BI](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI)| Retail / E-commerce | Power BI   | ✅ Active |
-| 03 | [👥 03_HR Analytics — Business Intelligence Dashboard](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI)| HR / Talent Aquisition | Power BI  | ✅ Active |
+| 01 | [🛒 01_NexaMart Retail Analysis - Using SQL](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/01_NexaMart%20Retail%20Analysis%20-%20Using%20SQL) | Retail / Sales / Global | MySQL | ![Schema](https://github.com/user-attachments/assets/ba1ad049-2f1f-4ec4-9195-fb3ba2b6866c) | 
+| 02 | [🚲 02_AdventureWorks Data Visualization - Using Power BI](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI)| Retail / E-commerce | Power BI   | ![Executive Summary](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/02_AdventureWorks%20Data%20Visualization%20-%20Using%20Power%20BI/03_Screenshots/01_Exec_Dashboard.png) | 
+| 03 | [👥 03_HR Analytics — Business Intelligence Dashboard](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/tree/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI)| HR / Talent Aquisition | Power BI | ![Overview](https://github.com/vandhanaparthasarathy-hub/Sales-Data-Analysis-SQL_PowerBI/blob/main/03_HR%20Analytics%20-%20Talent%20Acquisition%20-%20Using%20Power%20BI/03_Screenshots/01_overview.png) | 
+
 *More projects coming soon.*
 
 ---
