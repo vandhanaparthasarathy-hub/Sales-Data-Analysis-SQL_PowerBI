@@ -128,30 +128,43 @@ A separate Power Query named `ReferralSpend` calculated monthly referral bonus s
 
 All 12 normalised tables were loaded into the model. `HiringData_Flat` was kept in Power Query with load disabled as an audit reference.
 
+
+| # | Tables| Row Count | # | Tables | Row Count |
+|---|---|---|---|---|---|
+| 1 | Applications | 8,418 | 7 | Recruiters | 12 | 
+| 2 | Candidates | 2,996 | 8 | Hiring Managers | 12 |
+| 3 | Jobs | 94 | 9 | Position Slots |  293 |
+| 4 | Departments| 6 | 10 | Dates | 1,186 |  
+| 5 | Stages | 5 | 11 | HeadcountPlan  | 78 | 
+| 6 | Sources | 7 | 12 | SourceCosts | 300 | 
+
 ---
 
-## 🏗️ Data Model — Star Schema
+## 🏗️ Data Model — Snowflake Schema
 
-> *(Insert schema screenshot here — `03_Screenshots/00_schema.png`)*
+> <img width="1027" height="751" alt="image" src="https://github.com/user-attachments/assets/bfe96ca3-b5db-46a2-89bb-2948e8ea9f9d" />
 
-The model follows a **star schema** with the `Applications` table as the central fact table, surrounded by 7 dimension tables. Two supporting tables (HeadcountPlan and SourceCosts) connect to dimension tables rather than the fact table directly.
+
+The model starts as a **star schema** with the `Applications` table as the central fact table, surrounded by 6 dimension tables connected directly. 
+With PositionSlots directly connected to the main fact table (`Applications`), it is furthernormolized as a central table connected to Jobs which in turn is connectd to Departments and HiringManagers, this smaller star schema connected to the bigger central tables represents a **Snowflake Schema**, that we are following in this system . 
+Further, two supporting tables (HeadcountPlan and SourceCosts) connect to dimension tables rather than the fact table directly.
 
 ### Tables
 
-| Table | Type | Rows | Columns | Primary Key |
-|---|---|---|---|---|
-| Applications | Fact | 8,418 | 21 | ApplicationID |
-| Candidates | Dimension | 2,996 | 9 | CandidateID |
-| Jobs | Dimension | 94 | 12 | JobID |
-| Departments | Dimension | 6 | 5 | DepartmentID |
-| Stages | Dimension | 5 | 6 | StageID |
-| Sources | Dimension | 7 | 3 | SourceID |
-| Recruiters | Dimension | 12 | 8 | RecruiterID |
-| Hiring Managers | Dimension | 12 | 5 | HiringManagerID |
-| Position Slots | Dimension | 293 | 3 | PositionSlotID |
-| Dates | Date table | 1,186 | 8 | Date |
-| HeadcountPlan | Supporting | 78 | 7 | HeadCountPlanID |
-| SourceCosts | Supporting | 300 | 9 | SourceCostID |
+| Table | Type | Columns | Primary Key |
+|---|---|---|---|
+| Applications | Fact | 21 | ApplicationID |
+| Candidates | Dimension |9 | CandidateID |
+| Jobs | Dimension | 12 | JobID |
+| Departments | Dimension |  5 | DepartmentID |
+| Stages | Dimension | 6 | StageID |
+| Sources | Dimension | 3 | SourceID |
+| Recruiters | Dimension | 8 | RecruiterID |
+| Hiring Managers | Dimension | 5 | HiringManagerID |
+| Position Slots | Dimension | 3 | PositionSlotID |
+| Dates | Date table | 8 | Date |
+| HeadcountPlan | Supporting | 7 | HeadCountPlanID |
+| SourceCosts | Supporting | 9 | SourceCostID |
 
 ### Key relationship decisions
 
@@ -280,14 +293,6 @@ Appears on hover over source bars and scatter bubbles. Canvas: 320 × 240px.
 Appears on hover over department bars on the Overview waterfall and Time to Hire chart. Canvas: 260 × 330px.
 
 **Shows:** Department name · Total Hires · Hiring vs Plan % · Avg Days to Hire · Offer Acceptance Rate · Hires by Job Level mini bar chart
-
----
-
-## 🏗️ Schema Design
-
-<img width="1027" height="751" alt="image" src="https://github.com/user-attachments/assets/85f59575-aabe-4917-9555-6a44e766390b" />
-
-> Hybrid relational data structure - Snowflake schema with `Applications` as the central fact tables surrounded by 11 dimension tables after Normalization.
 
 ---
 
