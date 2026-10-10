@@ -5,7 +5,7 @@
 
 ## 📌 Project Overview
 
-This project is a fully interactive **Business Intelligence Dashboard** built in **Microsoft Power BI Desktop**, using the AdventureWorks dataset — a fictional cycling company that sells bikes, accessories, clothing, and components globally.
+This project is a fully interactive **Business Intelligence Dashboard** built in **Microsoft Power BI Desktop**, using the AdventureWorks dataset - a fictional cycling company that sells bikes, accessories, clothing, and components globally.
 
 The dashboard was developed as part of the **"Microsoft Power BI Desktop for Business Intelligence"** course on Udemy, covering the end-to-end BI workflow: from raw data ingestion to polished, interactive reporting.
 
@@ -23,7 +23,7 @@ The dashboard was developed as part of the **"Microsoft Power BI Desktop for Bus
 
 ## 📊 Dashboard Pages
 
-### Page 1 — Exec Dashboard
+### Page 1 - Exec Dashboard
 A high-level overview of company performance:
 
 | KPI | Value |
@@ -42,13 +42,13 @@ A high-level overview of company performance:
 
 ---
 
-### Page 2 — Geographic Map View
+### Page 2 - Geographic Map View
 - Interactive world map filtered by region: **Europe**, **North America**, **Pacific**
 - "Select All" toggle for global view
 
 ---
 
-### Page 3 — Product Detail
+### Page 3 - Product Detail
 Drill through view for individual product performance ***(Referneced from Products in Top 10 Products Table of Page 1 - Exec Dashboard)***:
 
 - Monthly Orders, Revenue & Profit vs. Target (gauge charts)
@@ -59,7 +59,7 @@ Drill through view for individual product performance ***(Referneced from Produc
 
 ---
 
-### Page 4 — Customer Detail
+### Page 4 - Customer Detail
 Customer segmentation and behaviour analysis:
 
 - **17.4K Unique Customers** | **$1,431 Revenue per Customer**
@@ -68,7 +68,7 @@ Customer segmentation and behaviour analysis:
 - Total Orders by **Occupation** (Skilled Manual, Professional, Management)
 - Total Orders by **Income Level** (Low, Average, High)
 - Year range slicer with highlighted top customer insights
-- **Top customer:** Mr. Maurice Shan — 6 orders, $12.4K revenue
+- **Top customer:** Mr. Maurice Shan - 6 orders, $12.4K revenue
 
 ---
 ## 🏗️ Schema Design
@@ -107,12 +107,12 @@ Interactive Reports & Dashboards
 
 **Key steps covered:**
 
-1. **Data Connection** — Loaded 10 CSV files into Power BI (6 dimension tables, 4 fact tables)
-2. **Data Cleaning** — Removed duplicates, errors, irrelevant columns; corrected data types
-3. **Data Transformation** — Reshaped tables, renamed fields, filtered rows in Power Query
-4. **Data Modelling** — Defined relationships across fact and dimension tables (star schema)
-5. **DAX Development** — Created measures for revenue, profit, return rate, MoM comparisons, rolling totals, and target tracking
-6. **Report Design** — Built multi-page dashboards with slicers, drill-throughs, KPI cards, and custom visuals
+1. **Data Connection** - Loaded 10 CSV files into Power BI (6 dimension tables, 4 fact tables)
+2. **Data Cleaning** - Removed duplicates, errors, irrelevant columns; corrected data types
+3. **Data Transformation** - Reshaped tables, renamed fields, filtered rows in Power Query
+4. **Data Modelling** - Defined relationships across fact and dimension tables (star schema)
+5. **DAX Development** - Created measures for revenue, profit, return rate, MoM comparisons, rolling totals, and target tracking
+6. **Report Design** - Built multi-page dashboards with slicers, drill-throughs, KPI cards, and custom visuals
 
 ---
 
@@ -179,11 +179,11 @@ Interactive Reports & Dashboards
 
 ## 💡 Key DAX Concepts Used
 
-- `CALCULATE()` — context modification for filtered measures
-- `DATEADD()` / `SAMEPERIODLASTYEAR()` — time intelligence functions
-- `DIVIDE()` — safe division to avoid blank/error returns
-- `IF()` / `SWITCH()` — conditional logic in measures
-- `RELATED()` — cross-table lookups in calculated columns
+- `CALCULATE()` - context modification for filtered measures
+- `DATEADD()` / `SAMEPERIODLASTYEAR()` - time intelligence functions
+- `DIVIDE()` - safe division to avoid blank/error returns
+- `IF()` / `SWITCH()` - conditional logic in measures
+- `RELATED()` - cross-table lookups in calculated columns
 - Rolling totals & MoM % change measures
 
 ---
